@@ -1,0 +1,26 @@
+{
+  "name": "widgets",
+  "version": "1.0.0",
+  "description": "Widgets JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qdhrb/widgets.git"
+  },
+  "keywords": [
+    "widgets",
+    "js"
+  ],
+  "author": "HanRubing <qdhrb@sina.com>",
+  "license": "GPLv3",
+  "bugs": {
+    "url": "https://github.com/qdhrb/widgets/issues"
+  },
+  "homepage": "https://github.com/qdhrb/widgets#readme",
+  "dependencies": {
+    "@rollup/plugin-replace": "^3.0.0"
+  }
+}
