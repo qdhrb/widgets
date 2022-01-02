@@ -3,8 +3,45 @@
  * @param itm
  * @returns {[]}
  */
- export function i2a(itm) {
+export function i2a(itm) {
 	return Array.isArray(itm) ? itm : [itm];
+}
+/**
+ * 是否为函数
+ * @param {*} v
+ * @returns {boolean}
+ */
+export function isFunc(v) {
+	return typeof(v) === 'function';
+}
+/**
+ * 是否为字符串
+ * @param {*} v
+ * @returns {boolean}
+ */
+export function isStr(v) {
+	return typeof(v) === 'string';
+}
+/**
+ * 是否为数字
+ * @param {*} v
+ * @returns {boolean}
+ */
+export function isNum(v) {
+	return typeof(v) === 'number';
+}
+/**
+ * 判断是否为简单的对象
+ * @param {*} o
+ * @returns {boolean}
+ */
+export function isPlainObject(o) {
+	if (o === null || typeof o !== 'object') return false;
+	let proto = o;
+	while (Object.getPrototypeOf(proto) !== null) {
+		proto = Object.getPrototypeOf(proto);
+	}
+	return Object.getPrototypeOf(o) === proto;
 }
 /**
  * 随机数
@@ -27,7 +64,7 @@ export function fix(n, t0) {
 	return Math.round(n * t0) / t0;
 }
 /** 字符串切分正则表达式 */
-let _rgxSplit = /[^\x20\t\r\n\f,;]+/g;
+let _rgxSplit = /[^ \t\r\n,;]+/g;
 /**
  * 拆分一个空白字符或逗号分割的字符串
  * @param {String} str

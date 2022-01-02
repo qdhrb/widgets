@@ -1,7 +1,9 @@
 import {name, version, author} from './package.json';
 import replace from '@rollup/plugin-replace';
+import { terser } from 'rollup-plugin-terser';
 
-const key = 'widgets';
+const fname = 'widgets';
+const key = 'wgs';
 const banner =
 '/*!\r\n' +
 ' * ' + name + '\r\n' +
@@ -13,10 +15,17 @@ export default {
 	input: './src/index.js',
 	output: [{
 		banner:banner,
-		file: './dist/' + key + '-' + version + '.js',
+		file: './dist/' + fname + '-' + version + '.js',
 		format: 'iife',
 		name: key,
 		preferConst:true
+	},{
+		banner:banner,
+		file: './dist/' + fname + '-' + version + '.min.js',
+		format: 'iife',
+		name: key,
+		preferConst:true,
+		plugins:[terser()]
 	}],
 	plugins: [
 		replace({

@@ -20,7 +20,9 @@
     "url": "https://github.com/qdhrb/widgets/issues"
   },
   "homepage": "https://github.com/qdhrb/widgets#readme",
-  "dependencies": {
-    "@rollup/plugin-replace": "^3.0.0"
+  "dependencies": {},
+  "devDependencies": {
+    "@rollup/plugin-replace": "^3.0.0",
+    "rollup-plugin-terser": "^7.0.2"
   }
 }
